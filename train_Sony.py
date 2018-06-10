@@ -115,7 +115,7 @@ Output: Tensor of same shape with same number of channels as any input
 """
 def channel_weighted_pooling(weights, channel):
     nr_channel = channel.get_shape().as_list()[-1]
-        with tf.name_scope('cwp') as scope:
+    with tf.name_scope('cwp') as scope:
         pool_weights = tf.split(weights, num_or_size_splits = nr_channel, axis = 3)
         channel_outputs = tf.split(channel, num_or_size_splits = nr_channel, axis = 3)
         prod = []
@@ -246,7 +246,7 @@ def pack_raw(raw):
 
 
 
-sess=tf.Session()
+"""sess=tf.Session()
 in_image=tf.placeholder(tf.float32,[None,None,None,4])
 gt_image=tf.placeholder(tf.float32,[None,None,None,3])
 out_image=network(in_image)
@@ -349,3 +349,4 @@ for epoch in range(lastepoch,4001):
           scipy.misc.toimage(temp*255,  high=255, low=0, cmin=0, cmax=255).save(result_dir + '%04d/%05d_00_train_%d.jpg'%(epoch,train_id,ratio))
 
     saver.save(sess, checkpoint_dir + 'model.ckpt')
+"""
