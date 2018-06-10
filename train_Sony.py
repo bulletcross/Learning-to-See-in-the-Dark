@@ -348,5 +348,9 @@ for epoch in range(lastepoch,4001):
           temp = np.concatenate((gt_patch[0,:,:,:],output[0,:,:,:]),axis=1)
           scipy.misc.toimage(temp*255,  high=255, low=0, cmin=0, cmax=255).save(result_dir + '%04d/%05d_00_train_%d.jpg'%(epoch,train_id,ratio))
 
+<<<<<<< HEAD
     saver.save(sess, checkpoint_dir + 'model.ckpt')
 """
+=======
+    saver.save(sess, checkpoint_dir + 'model.ckpt')"""
+>>>>>>> 7693dd2a0f37c2d5ea0db65282a7fa05f5af54a4
